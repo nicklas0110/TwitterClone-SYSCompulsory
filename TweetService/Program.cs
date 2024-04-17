@@ -21,7 +21,6 @@ var mapperConfig = new MapperConfiguration(config =>
 {
     //DTO to entity
     config.CreateMap<AddTweetDTO, Tweet>();
-    config.CreateMap<UpdateTweetDTO, Tweet>();
 }).CreateMapper();
 
 builder.Services.AddSingleton(mapperConfig);
