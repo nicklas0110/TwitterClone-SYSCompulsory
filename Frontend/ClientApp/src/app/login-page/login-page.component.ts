@@ -31,9 +31,7 @@ export class LoginPageComponent {
       // Handle login errors
       console.error('Login error:', error);
 
-      if ((error as any).code === 'auth/wrong-password') {
-        this.error = 'Wrong password. Please try again.';
-      } else {
+      if ((error as any).code != null) {
         this.error = 'Wrong Email or password';
       }
     }
