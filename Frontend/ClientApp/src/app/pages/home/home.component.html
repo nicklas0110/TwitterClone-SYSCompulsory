@@ -57,5 +57,9 @@
       </div>
     </div>
 
+    <div *ngIf="tweets.length == 0" style="display: flex; justify-content: center">
+      <h2>Feels empty in here... Go make a tweet!</h2>
+    </div>
+
   </main>
 </div>
