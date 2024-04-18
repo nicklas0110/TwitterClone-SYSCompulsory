@@ -6,8 +6,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Tweet/TweetService.csproj", "TweetService/"]
-COPY ["CommentService/CommentService.csproj", "CommentService/"]
+COPY ["TweetService/TweetService.csproj", "TweetService/"]
 RUN dotnet restore "TweetService/TweetService.csproj"
 COPY . .
 WORKDIR "/src/TweetService"

@@ -1,4 +1,4 @@
-const tweetUrl = 'http://localhost:8081/api';
+const tweetUrl = 'http://localhost:9090/api';
 const other1Url = 'http://localhost:8083/api';
 const other2Url = 'http://localhost:8085/api';
 

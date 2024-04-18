@@ -31,11 +31,12 @@
   <div class="post-tweet">
     <h2>Post a new tweet</h2>
     <form id="tweet-form">
-      <textarea id="tweet-text" placeholder="What's happening?"></textarea>
+      <textarea type="text" [(ngModel)]="body" id="tweet-text" name="body" placeholder="What's happening?" required></textarea>
       <div class="post-tweet-button">
-        <button type="submit">Tweet</button>
+        <button type="submit" (click)="postTweet()" >Tweet</button>
       </div>
     </form>
+
   </div>
 
 
