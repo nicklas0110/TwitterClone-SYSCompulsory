@@ -8,6 +8,8 @@
   margin: 0 auto;
   margin-bottom: 80px;
   margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .login-container h1 {

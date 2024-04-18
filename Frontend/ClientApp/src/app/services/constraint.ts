@@ -1,10 +1,10 @@
 const tweetUrl = 'http://localhost:9090/api';
-const other1Url = 'http://localhost:8083/api';
-const other2Url = 'http://localhost:8085/api';
+const other1Url = 'http://localhost:9090/api';
+const other2Url = 'http://localhost:9090/api';
 
 export const apiEndpoint = {
   TweetEndPoint: {
-    getTweets: `${tweetUrl}/Tweet/GetTweets`,
+    getTweets: `${tweetUrl}/Tweet/`,
     postTweet: `${tweetUrl}/Tweet/PostTweet`,
     deleteTweet: `${tweetUrl}/Tweet/DeleteTweet`,
   },

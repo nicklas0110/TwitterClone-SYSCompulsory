@@ -4,12 +4,19 @@
   font-family: Arial, sans-serif;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
 /* Sidebar styles */
 #sidebar {
   width: 250px;
   padding: 20px;
   background-color: #f0f0f0;
   float: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile img {
@@ -53,8 +60,8 @@
 
 /* Main content styles */
 #main-content {
-  margin-left: 280px;
-  padding: 20px;
+  padding: 20px 0 20px 20px;
+  width: 100%;
 }
 
 /* Post tweet section */
@@ -116,6 +123,8 @@
   border-bottom: 1px solid #ccc;
   padding-bottom: 20px;
   margin-bottom: 20px;
+  width: 100%;
+  display: flex;
 }
 
 .tweet img {
@@ -128,6 +137,9 @@
 
 .tweet-content {
   overflow: hidden; /* Clearfix */
+  width: 100%;
+  display: flex;
+  flex-direction: column
 }
 
 .tweet-content h3 {

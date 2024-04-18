@@ -1,72 +1,61 @@
-<!-- Sidebar -->
-<aside id="sidebar">
-  <div class="profile">
-    <img src="./assets/user-icon.webp" alt="Profile Picture">
-    <h2>John Doe</h2>
-    <p>@johndoe</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua.</p>
-    <div class="follow">
-      <button>Follow</button>
-    </div>
-  </div>
-  <!-- Trending section -->
-  <div class="trending">
-    <h2>Trending</h2>
-    <ul>
-      <li>#topic1</li>
-      <li>#topic2</li>
-      <li>#topic3</li>
-      <li>#topic4</li>
-      <li>#topic5</li>
-      <!-- Add more trending topics -->
-    </ul>
-  </div>
-</aside>
-
-<!-- Main content -->
-<main id="main-content">
-
-  <!-- Post tweet section -->
-  <div class="post-tweet">
-    <h2>Post a new tweet</h2>
-    <form id="tweet-form">
-      <textarea type="text" [(ngModel)]="body" id="tweet-text" name="body" placeholder="What's happening?" required></textarea>
-      <div class="post-tweet-button">
-        <button type="submit" (click)="postTweet()" >Tweet</button>
+<div class="wrapper">
+  <!-- Sidebar -->
+  <aside id="sidebar">
+    <div class="profile">
+      <img src="./assets/user-icon.webp" alt="Profile Picture">
+      <h2>John Doe</h2>
+      <p>@johndoe</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.</p>
+      <div class="follow">
+        <button>Follow</button>
       </div>
-    </form>
-
-  </div>
-
-
-  <!-- Tweet section -->
-  <div class="tweet">
-    <img src="./assets/user-icon.webp" alt="Tweet Picture">
-    <div class="tweet-content">
-      <h3>Name Name</h3>
-      <p>@namename - xh ago</p>
-      <p>Tweet body.</p>
-      <form id="react-form">
-      <button type="submit">Like</button>
-      <button type="submit">Comment</button>
-      <button type="submit">Follow</button>
-        </form>
     </div>
-  </div>
-  <!-- Add more tweets -->
-  <div class="tweet">
-    <img src="./assets/user-icon.webp" alt="Tweet Picture">
-    <div class="tweet-content">
-      <h3>John Doe</h3>
-      <p>@markjohnson - 3h ago</p>
-      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <form id="react-form">
-        <button type="submit">Like</button>
-        <button type="submit">Comment</button>
-        <button type="submit">Follow</button>
+    <!-- Trending section -->
+    <div class="trending">
+      <h2>Trending</h2>
+      <ul>
+        <li>#topic1</li>
+        <li>#topic2</li>
+        <li>#topic3</li>
+        <li>#topic4</li>
+        <li>#topic5</li>
+        <!-- Add more trending topics -->
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main id="main-content">
+
+    <!-- Post tweet section -->
+    <div class="post-tweet">
+      <h2>Post a new tweet</h2>
+      <form id="tweet-form">
+        <textarea type="text" [(ngModel)]="body" id="tweet-text" name="body" placeholder="What's happening?"
+                  required></textarea>
+        <div class="post-tweet-button">
+          <button type="submit" (click)="postTweet()">Tweet</button>
+        </div>
       </form>
+
     </div>
-  </div>
-  <!-- Add more tweets -->
-</main>
+
+
+    <!-- Tweet section -->
+    <div class="tweet" *ngFor="let tweet of tweets">
+      <img src="./assets/user-icon.webp" alt="Tweet Picture">
+      <div class="tweet-content">
+        <h3>Name Name</h3>
+        <p>@namename - {{formatDate(tweet.createdAt)}}</p>
+        <p>{{tweet.body}}</p>
+        <form id="react-form">
+          <button type="submit">Like</button>
+          <button type="submit">Comment</button>
+          <button type="submit">Follow</button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+</div>
