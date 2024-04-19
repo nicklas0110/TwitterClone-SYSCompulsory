@@ -1,6 +1,7 @@
 import {User} from "./user.interface";
 
 export interface Comment {
-  user: User;
+  tweetId: number;
+  userId: number;
   body: string;
 }

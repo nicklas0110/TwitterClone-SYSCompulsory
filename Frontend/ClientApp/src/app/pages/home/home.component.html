@@ -2,8 +2,11 @@
   <!-- Sidebar -->
   <aside id="sidebar">
     <div class="profile">
-      <img src="./assets/user-icon.webp" alt="Profile Picture">
-      <h2>John Doe</h2>
+      <div class="profileImgWrapper">
+        <img src="./assets/user-icon.webp" alt="Profile Picture">
+        <h2>John Doe</h2>
+      </div>
+
       <p>@johndoe</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua.</p>
@@ -30,9 +33,9 @@
 
     <!-- Post tweet section -->
     <div class="post-tweet">
-      <h2>Post a new tweet</h2>
       <form id="tweet-form">
-        <textarea type="text" [(ngModel)]="body" id="tweet-text" name="body" placeholder="What's happening?"
+        <textarea type="text" maxlength="300" [(ngModel)]="body" id="tweet-text" name="body"
+                  placeholder="What's happening?"
                   required></textarea>
         <div class="post-tweet-button">
           <button type="submit" (click)="postTweet()">Tweet</button>
@@ -47,13 +50,22 @@
       <img src="./assets/user-icon.webp" alt="Tweet Picture">
       <div class="tweet-content">
         <h3>Name Name</h3>
-        <p>@namename - {{formatDate(tweet.createdAt)}}</p>
-        <p>{{tweet.body}}</p>
-        <form id="react-form">
-          <button type="submit">Like</button>
-          <button type="submit">Comment</button>
-          <button type="submit">Follow</button>
-        </form>
+        <p>@namename - {{ formatDate(tweet.createdAt) }}</p>
+        <p>{{ tweet.body }}</p>
+        <div id="react-form">
+          <button type="button" (click)="likeTweet(tweet.id)">Like</button>
+          <button type="button" (click)="toggleCommentBox(tweet.id)">Comment</button>
+          <button type="button">Follow</button>
+        </div>
+
+        <!-- Comment section starts here -->
+        <div class="comments" *ngIf="activeCommentBox === tweet.id">
+          <textarea [(ngModel)]="commentBody" placeholder="Write a comment..." class="comment-input"></textarea>
+          <button (click)="postComment(tweet.id)" class="submit-comment">Post Comment</button>
+          <div class="comment" *ngFor="let comment of tweet.comments">
+            <strong>@{{ comment.userId }}:</strong> {{ comment.body }}
+          </div>
+        </div>
       </div>
     </div>
 

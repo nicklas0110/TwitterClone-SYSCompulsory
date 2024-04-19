@@ -4,6 +4,7 @@ import {TweetService} from "../../services/tweet.service";
 import {Time} from "@angular/common";
 import {retry, Timestamp} from "rxjs";
 import {Tweet} from "../../interfaces/tweet.interface";
+import {Comment} from "../../interfaces/comment.interface";
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,8 @@ import {Tweet} from "../../interfaces/tweet.interface";
 })
 export class HomeComponent implements OnInit {
   body: string = '';
+  commentBody: string = '';
+  activeCommentBox: number | null = null;
   tweets = <Tweet[]>([]);
 
   private _tweetService: TweetService = inject(TweetService);
@@ -22,9 +25,32 @@ export class HomeComponent implements OnInit {
 
   async getTweets() {
     await this._tweetService.getAllTweets().pipe(retry(3)).subscribe(tweets => {
-      this.tweets = tweets.reverse();
-    })
+      this.tweets = tweets.map(tweet => ({ ...tweet, comments: [] })).reverse();
+    });
   }
+
+  toggleCommentBox(tweetId: number) {
+    this.activeCommentBox = this.activeCommentBox === tweetId ? null : tweetId;
+  }
+
+  async postComment(tweetId: number) {
+    const comment: Comment = {
+      tweetId: tweetId,
+      userId: 1,
+      body: this.commentBody,
+    };
+
+    // Placeholder for backend integration
+    console.log('Posting comment:', comment);
+    this.commentBody = '';
+
+    const index = this.tweets.findIndex(t => t.id === tweetId);
+    if (index > -1) {
+      this.tweets[index].comments.push(comment);
+    }
+  }
+
+  likeTweet(tweetId: number) { }
 
   async postTweet() {
 

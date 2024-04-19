@@ -17,6 +17,15 @@
   float: left;
   display: flex;
   flex-direction: column;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px
+}
+
+.profileImgWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .profile img {
@@ -60,7 +69,7 @@
 
 /* Main content styles */
 #main-content {
-  padding: 20px 0 20px 20px;
+  padding: 0px 0 20px 20px;
   width: 100%;
 }
 
@@ -93,6 +102,9 @@
   padding: 10px;
   margin-bottom: 10px;
   resize: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #f0f0f0;
 }
 
 #tweet-form button {
@@ -102,6 +114,12 @@
   padding: 8px 16px;
   border-radius: 20px;
   cursor: pointer;
+  margin-left: -95px;
+  margin-bottom: 12px;
+}
+
+#tweet-form button:hover {
+  background-color: #0e7bcf;
 }
 
 #react-form button {
@@ -114,9 +132,10 @@
   cursor: pointer;
 }
 
-#tweet-form button:hover {
+#react-form button:hover {
   background-color: #0e7bcf;
 }
+
 
 /* Tweet styles */
 .tweet {
@@ -150,3 +169,33 @@
   margin: 0;
   color: #333;
 }
+
+.comment-input {
+  width: 95%;
+  height: 50px;
+  padding: 8px;
+  resize: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  margin: 15px 5px 5px 5px;
+}
+
+.submit-comment {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.comment {
+  margin-top: 5px;
+}
+
