@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "TwitterClone_SYSCompulsory"
+  "defaultProject": "TwitterClone_SYSCompulsory",
+  "cli": {
+    "analytics": false
+  }
 }
