@@ -6,13 +6,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetService", "TweetServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messaging", "Messaging\Messaging.csproj", "{FBF8C622-B8DE-4B2F-9456-355ECB978D55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentService", "CommentService\CommentService.csproj", "{6C967A6E-0170-488E-B919-B807025F6404}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService", "UserService\UserService.csproj", "{8C9B82D2-EFF9-433B-959D-A1CA3160BBD0}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{42EBE76E-FBF3-438E-AA75-52524302666D}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentService", "CommentService\CommentService.csproj", "{6C967A6E-0170-488E-B919-B807025F6404}"
-EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,5 +38,9 @@ Global
 		{6C967A6E-0170-488E-B919-B807025F6404}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C967A6E-0170-488E-B919-B807025F6404}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C967A6E-0170-488E-B919-B807025F6404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C9B82D2-EFF9-433B-959D-A1CA3160BBD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C9B82D2-EFF9-433B-959D-A1CA3160BBD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C9B82D2-EFF9-433B-959D-A1CA3160BBD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C9B82D2-EFF9-433B-959D-A1CA3160BBD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
