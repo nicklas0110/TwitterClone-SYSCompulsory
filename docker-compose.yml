@@ -23,3 +23,11 @@ services:
       - "9090:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+        
+  CommentService:
+    image: commentservice
+    build:
+      context: .
+      dockerfile: ./CommentService/Dockerfile
+    ports:
+      - "9092:80"      
