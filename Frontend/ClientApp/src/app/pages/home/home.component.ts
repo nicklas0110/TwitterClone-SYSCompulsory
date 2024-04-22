@@ -5,6 +5,7 @@ import {Time} from "@angular/common";
 import {retry, Timestamp} from "rxjs";
 import {Tweet} from "../../interfaces/tweet.interface";
 import {Comment} from "../../interfaces/comment.interface";
+import {User} from "../../interfaces/user.interface";
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,25 @@ export class HomeComponent implements OnInit {
   commentBody: string = '';
   activeCommentBox: number | null = null;
   tweets = <Tweet[]>([]);
+  suggestedUsers: User[] = [
+    {
+      id: 1,
+      name: "Jane Doe",
+      username: "janedoe",
+      profilePicture: "./assets/user-icon.webp",
+      email: "janedoe@gmail.com",
+      description: "I'm a cool person"
+    },
+    {
+      id: 2,
+      name: "John Doe",
+      username: "johndoe",
+      profilePicture: "./assets/user-icon.webp",
+      email: "johndoe@gmail.com",
+      description: "I'm a cool person too"
+    },
+
+  ];
 
   private _tweetService: TweetService = inject(TweetService);
 
@@ -73,6 +93,16 @@ export class HomeComponent implements OnInit {
         console.error('Error posting tweet:', error);
       }
     });
+  }
+
+  getSuggestedUsers() {
+    //this._userService.getSuggestedUsers()
+      //.subscribe(users => this.suggestedUsers = users);
+  }
+
+  followUser(userId: number) {
+    console.log('Following user:', userId);
+    //TODO follow logic here
   }
 
   formatDate(date: string) {

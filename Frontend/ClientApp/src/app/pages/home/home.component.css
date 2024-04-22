@@ -69,7 +69,7 @@
 
 /* Main content styles */
 #main-content {
-  padding: 0px 0 20px 20px;
+  padding: 0px 20px 20px 20px;
   width: 100%;
 }
 
@@ -94,6 +94,7 @@
 #tweet-form {
   margin-bottom: 10px;
   display: flex;
+  align-items: flex-end;
 }
 
 #tweet-text {
@@ -114,8 +115,10 @@
   padding: 8px 16px;
   border-radius: 20px;
   cursor: pointer;
-  margin-left: -95px;
-  margin-bottom: 12px;
+  margin-left: -85px;
+  margin-bottom: 20px;
+  height: 40px;
+  display: flex;
 }
 
 #tweet-form button:hover {
@@ -199,3 +202,71 @@
   margin-top: 5px;
 }
 
+#sidebar2 {
+  width: 250px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-left: auto; /* Push to the right side */
+}
+
+.suggestions h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info h3 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.user-info p {
+  margin: 0;
+  color: #555;
+}
+
+.follow-button {
+  background-color: #1da1f2;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.follow-button:hover {
+  background-color: #0e7bcf;
+}
+
+.see-more button {
+  width: 100%;
+  background-color: transparent;
+  color: #1da1f2;
+  border: 2px solid #1da1f2;
+  padding: 8px 0;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.see-more button:hover {
+  background-color: #1da1f2;
+  color: #fff;
+}

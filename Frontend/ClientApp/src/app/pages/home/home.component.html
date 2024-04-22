@@ -37,8 +37,8 @@
         <textarea type="text" maxlength="300" [(ngModel)]="body" id="tweet-text" name="body"
                   placeholder="What's happening?"
                   required></textarea>
+        <button type="submit" (click)="postTweet()">Tweet</button>
         <div class="post-tweet-button">
-          <button type="submit" (click)="postTweet()">Tweet</button>
         </div>
       </form>
 
@@ -74,4 +74,27 @@
     </div>
 
   </main>
+
+  <!-- Follow other users section -->
+  <aside id="sidebar2">
+    <div class="suggestions">
+      <h2>Who to follow</h2>
+      <div class="user" *ngFor="let user of suggestedUsers">
+        <div class="user-profile">
+          <img src="./assets/user-icon.webp" [alt]="user.name" class="user-image">
+          <div class="user-info">
+            <h3>{{ user.name }}</h3>
+            <p>@{{ user.username }}</p>
+            <p>{{ user.description }}</p>
+          </div>
+          <button class="follow-button" (click)="followUser(user.id)">Follow</button>
+        </div>
+      </div>
+      <div class="see-more">
+        <button>See more</button>
+      </div>
+    </div>
+  </aside>
+
+
 </div>
