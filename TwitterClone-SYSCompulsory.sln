@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIGateway", "APIGateway\APIGateway.csproj", "{AC1D1450-E186-4BBF-93A9-154CF25A1E00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorisationService", "AuthorisationService\AuthorisationService.csproj", "{FB3B1E07-3819-4636-829D-A0740CD095C2}"
+EndProject
 
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,5 +46,13 @@ Global
 		{8C9B82D2-EFF9-433B-959D-A1CA3160BBD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C9B82D2-EFF9-433B-959D-A1CA3160BBD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C9B82D2-EFF9-433B-959D-A1CA3160BBD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC1D1450-E186-4BBF-93A9-154CF25A1E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC1D1450-E186-4BBF-93A9-154CF25A1E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC1D1450-E186-4BBF-93A9-154CF25A1E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC1D1450-E186-4BBF-93A9-154CF25A1E00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB3B1E07-3819-4636-829D-A0740CD095C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB3B1E07-3819-4636-829D-A0740CD095C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB3B1E07-3819-4636-829D-A0740CD095C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB3B1E07-3819-4636-829D-A0740CD095C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

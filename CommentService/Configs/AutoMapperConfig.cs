@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using CommentService.Core.Entities;
-using CommentService.Core.Entities.Dtos;
+using CommentService.Core.Services;
 
 namespace CommentService.Configs;
 

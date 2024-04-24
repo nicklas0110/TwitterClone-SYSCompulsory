@@ -1,4 +1,4 @@
-﻿namespace CommentService.Core.Entities.Dtos;
+﻿namespace CommentService.Core.Services;
 
 public class UpdateCommentDto
 {

@@ -1,5 +1,4 @@
 using System.Text.Json;
-using CommentService.Core.Entities.Dtos;
 using CommentService.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 

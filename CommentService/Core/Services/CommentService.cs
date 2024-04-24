@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using CommentService.Core.Entities;
-using CommentService.Core.Entities.Dtos;
 using CommentService.Core.Helper;
 using CommentService.Core.Repositories;
 using CommentService.Core.Services;

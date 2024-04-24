@@ -1,5 +1,4 @@
 ﻿using CommentService.Core.Entities;
-using CommentService.Core.Entities.Dtos;
 using CommentService.Core.Helper;
 
 namespace CommentService.Core.Services;
