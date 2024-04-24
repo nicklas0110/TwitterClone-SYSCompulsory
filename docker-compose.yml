@@ -13,6 +13,8 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
 
   APIGateway:
     image: apigateway
@@ -21,8 +23,10 @@ services:
       dockerfile: ./APIGateway/Dockerfile
     ports:
       - "5206:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
 
-  AuthService:
+  AuthorisationService:
     image: authorisationservice
     build:
       context: .
@@ -31,6 +35,8 @@ services:
       - APIGateway
     ports:
       - "9094:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
 
   TweetService:
     image: tweetservice
@@ -41,6 +47,18 @@ services:
       - "9090:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      
+  FollowedTweetsService:
+    image: followedtweetsservice
+    build:
+      context: .
+      dockerfile: ./FollowedTweetsService/Dockerfile
+    depends_on:
+      - AuthorisationService
+    ports:
+      - "9091:80"    
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
         
   CommentService:
     image: commentservice
@@ -49,3 +67,5 @@ services:
       dockerfile: ./CommentService/Dockerfile
     ports:
       - "9092:80"      
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development

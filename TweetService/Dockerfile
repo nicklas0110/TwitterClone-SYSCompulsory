@@ -7,6 +7,7 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["TweetService/TweetService.csproj", "TweetService/"]
+COPY ["CommentService/CommentService.csproj", "CommentService/"]
 RUN dotnet restore "TweetService/TweetService.csproj"
 COPY . .
 WORKDIR "/src/TweetService"
