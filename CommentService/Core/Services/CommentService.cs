@@ -21,12 +21,12 @@ public class CommentService : ICommentService
         _messageClient = messageClient ?? throw new ArgumentException("MessageClient should not be null");
     }
 
-    public async Task<PaginatedResult<Comment>> GetComments(int tweetId, PaginatedDto dto)
+    public async Task<List<Comment>> GetComments(int tweetId)
     {
         if (tweetId < 1) throw new ArgumentException("id should not be < 1");
-
-        return await _commentRepository.GetComments(tweetId, dto.PageNumber, dto.PageSize);
+        return await _commentRepository.GetAllCommentsForTweet(tweetId);
     }
+
 
     public async Task AddComment(AddCommentDto comment, int userIdOfTweet)
     {

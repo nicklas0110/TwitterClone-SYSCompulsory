@@ -1,11 +1,13 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {TweetDto} from "../../DTOs/Tweet.dto";
 import {TweetService} from "../../services/tweet.service";
+import {CommentService} from "../../services/comment.service";
 import {Time} from "@angular/common";
 import {retry, Timestamp} from "rxjs";
 import {Tweet} from "../../interfaces/tweet.interface";
 import {Comment} from "../../interfaces/comment.interface";
 import {User} from "../../interfaces/user.interface";
+import {CommentDto} from "../../DTOs/Comment.dto";
 
 @Component({
   selector: 'app-home',
@@ -38,6 +40,7 @@ export class HomeComponent implements OnInit {
   ];
 
   private _tweetService: TweetService = inject(TweetService);
+  private _commentService: CommentService = inject(CommentService);
 
   ngOnInit(): void {
     this.getTweets();
@@ -49,33 +52,36 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  toggleCommentBox(tweetId: number) {
-    this.activeCommentBox = this.activeCommentBox === tweetId ? null : tweetId;
+  async getComments(tweetId: number) {
+    await this._commentService.getAllComments(tweetId).subscribe(comments => {
+      const index = this.tweets.findIndex(t => t.id === tweetId);
+      if (index > -1) {
+        this.tweets[index].comments = [...comments];  // Create a new array reference
+      }
+    }, error => {
+      console.error('Failed to load comments:', error);
+    });
   }
 
-  async postComment(tweetId: number) {
-    const comment: Comment = {
-      tweetId: tweetId,
-      userId: 1,
-      body: this.commentBody,
-    };
 
-    // Placeholder for backend integration
-    console.log('Posting comment:', comment);
-    this.commentBody = '';
 
-    const index = this.tweets.findIndex(t => t.id === tweetId);
-    if (index > -1) {
-      this.tweets[index].comments.push(comment);
+  toggleCommentBox(tweetId: number) {
+    if (this.activeCommentBox === tweetId) {
+      this.activeCommentBox = null;
+    } else {
+      this.activeCommentBox = tweetId;
+      this.getComments(tweetId);
     }
   }
 
   likeTweet(tweetId: number) { }
 
   async postTweet() {
-
-    await this.addTweet(1, this.body);
-    this.body = '';
+    if(this.body != '') {
+      await this.addTweet(1, this.body);
+      this.body = '';
+    }
+    else this.body = 'Write something interesting here!';
   }
 
   async addTweet(userId: number, body: string) {
@@ -94,6 +100,37 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
+  async postComment(tweetId: number) {
+    await this.addComment(tweetId);
+    this.commentBody = '';
+  }
+
+  async addComment(tweetId: number) {
+    if (this.commentBody.trim() === '') {
+      console.error('Comment body is empty.');
+      return;
+    }
+
+    const commentDto: CommentDto = {
+      userId: 1, // assuming you have a way to get the current user's ID
+      body: this.commentBody,
+      tweetId: tweetId,
+    };
+
+    this._commentService.postComment(commentDto).subscribe({
+      next: (comment) => {
+        console.log('Comment posted:', comment);
+        this.getComments(tweetId);
+      },
+      error: (error) => {
+        console.error('Error posting comment:', error);
+        this.getComments(tweetId);
+      }
+    });
+  }
+
+
 
   getSuggestedUsers() {
     //this._userService.getSuggestedUsers()

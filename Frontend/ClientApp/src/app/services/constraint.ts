@@ -1,6 +1,6 @@
 const tweetUrl = 'http://localhost:9090/api';
-const other1Url = 'http://localhost:9090/api';
-const other2Url = 'http://localhost:9090/api';
+const commentUrl = 'http://localhost:9092/api';
+const userUrl = 'http://localhost:9090/api';
 
 export const apiEndpoint = {
   TweetEndPoint: {
@@ -8,12 +8,12 @@ export const apiEndpoint = {
     postTweet: `${tweetUrl}/Tweet/PostTweet`,
     deleteTweet: `${tweetUrl}/Tweet/DeleteTweet`,
   },
-  Other1EndPoint: {
-    subtraction: `${other1Url}/Other`
+  CommentEndPoint: {
+    getComments: `${commentUrl}/Comment`,
+    postComment: `${commentUrl}/Comment/PostComment`,
   },
-  Other2EndPoint: {
-    getOther1: `${other2Url}/Other`,
-    getOther2: `${other2Url}/`,
-    addOther: `${other2Url}/Other/AddOther`,
+  UserEndPoint: {
+    getOther1: `${userUrl}/User`,
+    getOther2: `${userUrl}/User`,
   }
 }

@@ -18,11 +18,12 @@ public class CommentController : ControllerBase
 
     [HttpGet]
     [Route("{tweetId}")]
-    public async Task<IActionResult> GetComments([FromRoute] int tweetId, [FromQuery] PaginatedDto dto)
+    public async Task<IActionResult> GetComments([FromRoute] int tweetId)
     {
         try
         {
-            return Ok(await _commentService.GetComments(tweetId, dto));
+            var comments = await _commentService.GetComments(tweetId);
+            return Ok(comments);
         }
         catch (Exception e)
         {
@@ -31,13 +32,14 @@ public class CommentController : ControllerBase
     }
 
     [HttpPost]
+    [Route("PostComment")]
     public async Task<IActionResult> AddComment([FromBody] AddCommentDto dto)
     {
         try
         {
             var request = await _client.GetAsync($"http://TweetService/api/Tweet/{dto.TweetId}");
 
-            if (!request.IsSuccessStatusCode) throw new KeyNotFoundException($"No {dto.TweetId}");
+            if (!request.IsSuccessStatusCode) throw new KeyNotFoundException($"No tweet id of {dto.TweetId}");
             var result = await request.Content.ReadAsStringAsync();
             JsonDocument doc = JsonDocument.Parse(result);
             JsonElement root = doc.RootElement;

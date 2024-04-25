@@ -6,7 +6,7 @@ namespace CommentService.Core.Services;
 public interface ICommentService
 {
    
-    public Task<PaginatedResult<Comment>> GetComments(int tweetId, PaginatedDto dto);
+    public Task<List<Comment>> GetComments(int tweetId);
     
     public Task AddComment(AddCommentDto comment, int userIdOfTweet);
 

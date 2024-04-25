@@ -14,22 +14,13 @@ public class CommentRepository : ICommentRepository
         _context = context;
     }
     
-    public async Task<PaginatedResult<Comment>> GetComments(int tweetId, int pageIndex, int pageSize)
+    public async Task<List<Comment>> GetAllCommentsForTweet(int tweetId)
     {
         var comments = await _context.Comments
-            .Skip(pageSize * pageIndex)
-            .Take(pageSize)
             .Where(c => c.TweetId == tweetId)
             .ToListAsync();
 
-        var totalCount =  await _context.Comments
-            .CountAsync(c => c.TweetId == tweetId);
-        
-        return new PaginatedResult<Comment>
-        {
-            Items = comments,
-            TotalCount = totalCount
-        };
+        return comments;
     }
 
     public async Task AddComment(Comment comment)
