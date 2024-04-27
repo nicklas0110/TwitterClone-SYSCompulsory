@@ -143,11 +143,11 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Tweet/postTweet",
+      "UpstreamPathTemplate": "/api/Tweet",
       "UpstreamHttpMethod": [
         "POST"
       ],
-      "DownstreamPathTemplate": "/api/Tweet/postTweet",
+      "DownstreamPathTemplate": "/api/Tweet",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -206,7 +206,7 @@
       "UpstreamHttpMethod": [
         "POST"
       ],
-      "DownstreamPathTemplate": "/api/Comment/",
+      "DownstreamPathTemplate": "/api/Comment",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
