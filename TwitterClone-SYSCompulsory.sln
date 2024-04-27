@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorisationService", "Aut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FollowedTweetsService", "FollowedTweetsService\FollowedTweetsService.csproj", "{D2BE4697-0D41-425F-AAC4-49B20F6FCCB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetService.test", "TweetService.test\TweetService.test.csproj", "{B00D3E63-832C-4725-92DE-A888E0F191E4}"
+EndProject
 
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,5 +62,9 @@ Global
 		{D2BE4697-0D41-425F-AAC4-49B20F6FCCB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2BE4697-0D41-425F-AAC4-49B20F6FCCB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2BE4697-0D41-425F-AAC4-49B20F6FCCB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B00D3E63-832C-4725-92DE-A888E0F191E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B00D3E63-832C-4725-92DE-A888E0F191E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B00D3E63-832C-4725-92DE-A888E0F191E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B00D3E63-832C-4725-92DE-A888E0F191E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
