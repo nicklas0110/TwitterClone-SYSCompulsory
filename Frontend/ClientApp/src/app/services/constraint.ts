@@ -5,7 +5,7 @@ const userUrl = 'http://localhost:9090/api';
 export const apiEndpoint = {
   TweetEndPoint: {
     getTweets: `${tweetUrl}/Tweet/`,
-    postTweet: `${tweetUrl}/Tweet/PostTweet`,
+    postTweet: `${tweetUrl}/Tweet/`,
     deleteTweet: `${tweetUrl}/Tweet/DeleteTweet`,
   },
   CommentEndPoint: {

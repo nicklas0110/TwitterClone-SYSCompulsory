@@ -21,7 +21,7 @@ public class CustomRemoteAuthenticationHandler : AuthenticationHandler<CustomRem
 
     protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
     {
-        var requestMessage = new HttpRequestMessage(HttpMethod.Get, "http://AuthorisationService/api/Auth/ValidateToken");
+        var requestMessage = new HttpRequestMessage(HttpMethod.Get, "http://AuthorisationService/api/Authorisation/ValidateToken");
         requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Request.Headers.Authorization.ToString().Replace("Bearer ", ""));
 
         var response = await _httpClient.SendAsync(requestMessage);

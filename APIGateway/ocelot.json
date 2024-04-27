@@ -125,6 +125,7 @@
       "UpstreamPathTemplate": "/api/Tweet/{id}",
       "UpstreamHttpMethod": [
         "GET",
+        "PUT",
         "DELETE"
       ],
       "DownstreamPathTemplate": "/api/Tweet/{id}",
