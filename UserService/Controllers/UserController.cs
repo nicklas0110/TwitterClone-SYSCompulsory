@@ -30,6 +30,21 @@ public class UserController : ControllerBase
         }
     }
 
+    //This method is used to get all users from the database
+    [HttpGet]
+    [Route("GetAllUsers")]
+    public async Task<IActionResult> GetAllUsers([FromQuery] PaginatedDTO dto)
+    {
+        try
+        {
+            return Ok(await _userService.GetAllUsers(dto));
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }   
+    
     [HttpGet]
     [Route("{userId}")]
     public async Task<IActionResult> GetUserById([FromRoute] int userId)

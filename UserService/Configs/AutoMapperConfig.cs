@@ -11,10 +11,9 @@ public static class AutoMapperConfig
     {
         var mapperConfig = new MapperConfiguration(config =>
         {
-            //DTO to Entity
             config.CreateMap<CreateUserDTO, User>();
-
-            // Entity to DTO
+            
+            config.CreateMap<PaginatedResult<User>, PaginatedResult<GetUserDTO>>();
             config.CreateMap<User, GetUserDTO>();
         });
 

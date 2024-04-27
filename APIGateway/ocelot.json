@@ -102,16 +102,16 @@
       ]
     },
     {
-      "//PostService": "PostService",
-      "UpstreamPathTemplate": "/api/Post",
+      "//TweetService": "TweetService",
+      "UpstreamPathTemplate": "/api/Tweet",
       "UpstreamHttpMethod": [
         "GET"
       ],
-      "DownstreamPathTemplate": "/api/Post",
+      "DownstreamPathTemplate": "/api/Tweet",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "PostService",
+          "Host": "TweetService",
           "Port": 80
         }
       ],
@@ -122,17 +122,17 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Post/{id}",
+      "UpstreamPathTemplate": "/api/Tweet/{id}",
       "UpstreamHttpMethod": [
         "GET",
         "PUT",
         "DELETE"
       ],
-      "DownstreamPathTemplate": "/api/Post/{id}",
+      "DownstreamPathTemplate": "/api/Tweet/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "PostService",
+          "Host": "TweetService",
           "Port": 80
         }
       ],
@@ -143,15 +143,15 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/api/Post",
+      "UpstreamPathTemplate": "/api/Tweet/postTweet",
       "UpstreamHttpMethod": [
         "POST"
       ],
-      "DownstreamPathTemplate": "/api/Post",
+      "DownstreamPathTemplate": "/api/Tweet/postTweet",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "PostService",
+          "Host": "TweetService",
           "Port": 80
         }
       ],

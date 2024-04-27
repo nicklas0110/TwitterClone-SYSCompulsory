@@ -31,6 +31,12 @@ public class UserService : IUserService
         else throw new ArgumentException("User cannot be null");
     }
 
+    public async Task<PaginatedResult<GetUserDTO>> GetAllUsers(PaginatedDTO dto)
+    {
+        return _mapper.Map<PaginatedResult<GetUserDTO>>(
+            await _userRepository.GetAllUsers(dto.PageNumber, dto.PageSize));
+    }
+
     public async Task DeleteUser(int userId)
     {
         var user = await _userRepository.GetUserById(userId);
