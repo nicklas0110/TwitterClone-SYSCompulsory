@@ -26,9 +26,9 @@ public class CreateUserHandler : BackgroundService
                 Email = user.Email,
                 Username = user.Username,
                 Password = user.Password,
-                CreationDate = DateTime.Now,
+                CreatedAt = DateTime.Now,
                 FirstName = user.FirstName,
-                Surname = user.Surname,
+                LastName = user.LastName,
             };
 
             await userService.CreateUser(dto);

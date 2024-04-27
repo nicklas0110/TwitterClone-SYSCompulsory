@@ -7,7 +7,7 @@ public class CreateUser
     public string Email { get; set; }
     public string Password { get; set; }
     public string FirstName { get; set; }
-    public string Surname { get; set; }
+    public string LastName { get; set; }
     public string Role { get; set; }
     
     public CreateUser(string message, string username, string email, string password, string firstName, string surname,
@@ -18,7 +18,7 @@ public class CreateUser
         Email = email;
         Password = password;
         FirstName = firstName;
-        Surname = surname;
+        LastName = surname;
         Role = role;
     }
 }
