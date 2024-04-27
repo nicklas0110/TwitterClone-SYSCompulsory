@@ -45,7 +45,6 @@ public class TweetController : ControllerBase
     }
 
     [HttpPost]
-    [Route("postTweet")]
     public async Task<IActionResult> AddTweet([FromBody] AddTweetDTO dto)
     {
         try
