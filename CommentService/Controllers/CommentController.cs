@@ -32,7 +32,6 @@ public class CommentController : ControllerBase
     }
 
     [HttpPost]
-    [Route("PostComment")]
     public async Task<IActionResult> AddComment([FromBody] AddCommentDto dto)
     {
         try
