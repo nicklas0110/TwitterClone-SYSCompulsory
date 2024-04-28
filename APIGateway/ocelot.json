@@ -88,15 +88,15 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/api/Auth/ValidateToken",
+      "UpstreamPathTemplate": "/api/Authorisation/ValidateToken",
       "UpstreamHttpMethod": [
         "GET"
       ],
-      "DownstreamPathTemplate": "/api/Auth/ValidateToken",
+      "DownstreamPathTemplate": "/api/Authorisation/ValidateToken",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "AuthService",
+          "Host": "AuthorisationService",
           "Port": 80
         }
       ]
@@ -240,17 +240,17 @@
       }
     },
     {
-      "//TimeLineService": "TimeLineService",
-      "UpstreamPathTemplate": "/api/TimeLine",
+      "//FollowedTweetsService": "FollowedTweetsService",
+      "UpstreamPathTemplate": "/api/FollowedTweets",
       "UpstreamHttpMethod": [
         "GET",
         "POST"
       ],
-      "DownstreamPathTemplate": "/api/TimeLine",
+      "DownstreamPathTemplate": "/api/FollowedTweets",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "TimeLineService",
+          "Host": "FollowedTweetsService",
           "Port": 80
         }
       ],
@@ -261,15 +261,15 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/api/TimeLine/{id}",
+      "UpstreamPathTemplate": "/api/FollowedTweets/{id}",
       "UpstreamHttpMethod": [
         "DELETE"
       ],
-      "DownstreamPathTemplate": "/api/TimeLine/{id}",
+      "DownstreamPathTemplate": "/api/FollowedTweets/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "TimeLineService",
+          "Host": "FollowedTweetsService",
           "Port": 80
         }
       ],
